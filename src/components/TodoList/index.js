@@ -15,13 +15,19 @@ class TodoList extends Component{
 
     addItem(e){
         let state = this.state;
-        if (this._tarefaInput.value != null) {
-            let newItem ={
-                text: this._tarefaInput.value,
-                key: Date.now()
-            };
-            this.setState({items: [...state.items, newItem]});
+        if (state.tarefa == ''){
+            alert('Digite algo!');
         }
+        else{
+            if (this._tarefaInput.value != null) {
+                let newItem ={
+                    text: this._tarefaInput.value,
+                    key: Date.now()
+                };
+                this.setState({items: [...state.items, newItem]});
+            }
+        }
+        
 
         this.setState({tarefa: ""});
 
